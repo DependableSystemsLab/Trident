@@ -1,0 +1,5 @@
+/home/gpli/LLFI-BUILD/bin/CMakeFiles/bin.dir
+/home/gpli/LLFI-BUILD/config/CMakeFiles/config.dir
+/home/gpli/LLFI-BUILD/llvm_passes/CMakeFiles/llfi-passes.dir
+/home/gpli/LLFI-BUILD/runtime_lib/CMakeFiles/llfi-rt.dir
+/home/gpli/LLFI-BUILD/tools/CMakeFiles/tools.dir

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gpli/LLFI-src/runtime_lib/CommonFaultInjectors.cpp
+FaultInjector.h
+/home/gpli/LLFI-src/runtime_lib/FaultInjector.h
+FaultInjectorManager.h
+/home/gpli/LLFI-src/runtime_lib/FaultInjectorManager.h
+
+/home/gpli/LLFI-src/runtime_lib/FaultInjector.h
+
+/home/gpli/LLFI-src/runtime_lib/FaultInjectorManager.cpp
+iostream
+-
+cstdlib
+-
+FaultInjector.h
+/home/gpli/LLFI-src/runtime_lib/FaultInjector.h
+FaultInjectorManager.h
+/home/gpli/LLFI-src/runtime_lib/FaultInjectorManager.h
+
+/home/gpli/LLFI-src/runtime_lib/FaultInjectorManager.h
+iostream
+-
+map
+-
+string
+-
+stdio.h
+-
+cstdlib
+-
+Utils.h
+/home/gpli/LLFI-src/runtime_lib/Utils.h
+
+/home/gpli/LLFI-src/runtime_lib/Utils.h
+stdbool.h
+-
+
