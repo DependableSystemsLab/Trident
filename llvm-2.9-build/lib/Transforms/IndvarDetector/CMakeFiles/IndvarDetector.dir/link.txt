@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,IndvarDetector.so -o ../../IndvarDetector.so CMakeFiles/IndvarDetector.dir/Hello.cpp.o 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLVMSmartProfile.so -o ../../LLVMSmartProfile.so CMakeFiles/LLVMSmartProfile.dir/Hello.cpp.o 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMCellSPUInfo.a  CMakeFiles/LLVMCellSPUInfo.dir/CellSPUTargetInfo.cpp.o
+/usr/bin/ranlib ../../../libLLVMCellSPUInfo.a

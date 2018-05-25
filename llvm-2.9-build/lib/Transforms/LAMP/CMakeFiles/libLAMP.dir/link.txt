@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,libLAMP.so -o ../../libLAMP.so CMakeFiles/libLAMP.dir/LAMPLoadProfile.cpp.o CMakeFiles/libLAMP.dir/LAMPProfiling.cpp.o 

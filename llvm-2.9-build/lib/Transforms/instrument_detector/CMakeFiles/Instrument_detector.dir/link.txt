@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,Instrument_detector.so -o ../../Instrument_detector.so CMakeFiles/Instrument_detector.dir/instrument_detector.cpp.o 

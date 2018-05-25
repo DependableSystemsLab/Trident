@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMARMDisassembler.a  CMakeFiles/LLVMARMDisassembler.dir/ARMDisassembler.cpp.o CMakeFiles/LLVMARMDisassembler.dir/ARMDisassemblerCore.cpp.o
+/usr/bin/ranlib ../../../libLLVMARMDisassembler.a

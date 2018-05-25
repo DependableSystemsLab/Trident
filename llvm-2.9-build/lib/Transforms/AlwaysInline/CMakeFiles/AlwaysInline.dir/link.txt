@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,AlwaysInline.so -o ../../AlwaysInline.so CMakeFiles/AlwaysInline.dir/Hello.cpp.o 

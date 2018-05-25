@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLVMFP.so -o ../../LLVMFP.so CMakeFiles/LLVMFP.dir/Hello.cpp.o 

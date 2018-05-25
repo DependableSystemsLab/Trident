@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMPTXInfo.a  CMakeFiles/LLVMPTXInfo.dir/PTXTargetInfo.cpp.o
+/usr/bin/ranlib ../../../libLLVMPTXInfo.a

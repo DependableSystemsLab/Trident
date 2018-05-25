@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../libLLVMInstrumentation.a  CMakeFiles/LLVMInstrumentation.dir/EdgeProfiling.cpp.o CMakeFiles/LLVMInstrumentation.dir/Instrumentation.cpp.o CMakeFiles/LLVMInstrumentation.dir/OptimalEdgeProfiling.cpp.o CMakeFiles/LLVMInstrumentation.dir/PathProfiling.cpp.o CMakeFiles/LLVMInstrumentation.dir/ProfilingUtils.cpp.o
+/usr/bin/ranlib ../../libLLVMInstrumentation.a

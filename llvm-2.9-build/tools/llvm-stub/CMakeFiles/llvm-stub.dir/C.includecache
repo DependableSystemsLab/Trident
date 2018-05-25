@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gpli/llvm-2.9/tools/llvm-stub/llvm-stub.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+llvm/Config/config.h
+/home/gpli/llvm-2.9/tools/llvm-stub/llvm/Config/config.h
+unistd.h
+-
+process.h
+-
+io.h
+-
+
+include/llvm/Config/config.h
+

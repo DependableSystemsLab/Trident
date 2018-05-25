@@ -1,0 +1,1 @@
+/usr/bin/gcc   -fPIC -fPIC    CMakeFiles/llvm-stub.dir/llvm-stub.c.o  -o ../../bin/llvm-stub -rdynamic -ldl -lpthread 

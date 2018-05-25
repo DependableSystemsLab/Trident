@@ -1,0 +1,68 @@
+libLLVMARMAsmParser.a: libLLVMARMCodeGen.a libLLVMARMInfo.a libLLVMMC.a libLLVMMCParser.a libLLVMSupport.a libLLVMTarget.a
+libLLVMARMAsmPrinter.a: libLLVMMC.a libLLVMSupport.a
+libLLVMARMCodeGen.a: libLLVMARMAsmPrinter.a libLLVMARMInfo.a libLLVMAnalysis.a libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMARMDisassembler.a: libLLVMARMCodeGen.a libLLVMARMInfo.a libLLVMMC.a libLLVMSupport.a
+libLLVMARMInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMAlphaCodeGen.a: libLLVMAlphaInfo.a libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMAlphaInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMAnalysis.a: libLLVMCore.a libLLVMSupport.a libLLVMTarget.a
+libLLVMArchive.a: libLLVMBitReader.a libLLVMCore.a libLLVMSupport.a
+libLLVMAsmParser.a: libLLVMCore.a libLLVMSupport.a
+libLLVMAsmPrinter.a: libLLVMAnalysis.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMMCParser.a libLLVMSupport.a libLLVMTarget.a
+libLLVMBitReader.a: libLLVMCore.a libLLVMSupport.a
+libLLVMBitWriter.a: libLLVMCore.a libLLVMSupport.a
+libLLVMBlackfinCodeGen.a: libLLVMAsmPrinter.a libLLVMBlackfinInfo.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMBlackfinInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMCBackend.a: libLLVMAnalysis.a libLLVMCBackendInfo.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMScalarOpts.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a libLLVMipa.a
+libLLVMCBackendInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMCellSPUCodeGen.a: libLLVMAsmPrinter.a libLLVMCellSPUInfo.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMCellSPUInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMCodeGen.a: libLLVMAnalysis.a libLLVMCore.a libLLVMMC.a libLLVMScalarOpts.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a
+libLLVMCore.a: libLLVMSupport.a
+libLLVMCppBackend.a: libLLVMCore.a libLLVMCppBackendInfo.a libLLVMSupport.a libLLVMTarget.a
+libLLVMCppBackendInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMExecutionEngine.a: libLLVMCore.a libLLVMSupport.a libLLVMTarget.a
+libLLVMInstCombine.a: libLLVMAnalysis.a libLLVMCore.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a
+libLLVMInstrumentation.a: libLLVMAnalysis.a libLLVMCore.a libLLVMSupport.a libLLVMTransformUtils.a
+libLLVMInterpreter.a: libLLVMCodeGen.a libLLVMCore.a libLLVMExecutionEngine.a libLLVMSupport.a libLLVMTarget.a
+libLLVMJIT.a: libLLVMCodeGen.a libLLVMCore.a libLLVMExecutionEngine.a libLLVMMC.a libLLVMSupport.a libLLVMTarget.a
+libLLVMLinker.a: libLLVMArchive.a libLLVMBitReader.a libLLVMCore.a libLLVMSupport.a libLLVMTransformUtils.a
+libLLVMMBlazeAsmParser.a: libLLVMMBlazeCodeGen.a libLLVMMBlazeInfo.a libLLVMMC.a libLLVMMCParser.a libLLVMSupport.a libLLVMTarget.a
+libLLVMMBlazeAsmPrinter.a: libLLVMMC.a libLLVMSupport.a
+libLLVMMBlazeCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMBlazeAsmPrinter.a libLLVMMBlazeInfo.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMMBlazeDisassembler.a: libLLVMMBlazeCodeGen.a libLLVMMBlazeInfo.a libLLVMMC.a libLLVMSupport.a
+libLLVMMBlazeInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMMC.a: libLLVMSupport.a
+libLLVMMCDisassembler.a: libLLVMARMAsmParser.a libLLVMARMCodeGen.a libLLVMARMDisassembler.a libLLVMARMInfo.a libLLVMAlphaCodeGen.a libLLVMAlphaInfo.a libLLVMBlackfinCodeGen.a libLLVMBlackfinInfo.a libLLVMCBackend.a libLLVMCBackendInfo.a libLLVMCellSPUCodeGen.a libLLVMCellSPUInfo.a libLLVMCppBackend.a libLLVMCppBackendInfo.a libLLVMMBlazeAsmParser.a libLLVMMBlazeCodeGen.a libLLVMMBlazeDisassembler.a libLLVMMBlazeInfo.a libLLVMMC.a libLLVMMCParser.a libLLVMMSP430CodeGen.a libLLVMMSP430Info.a libLLVMMipsCodeGen.a libLLVMMipsInfo.a libLLVMPTXCodeGen.a libLLVMPTXInfo.a libLLVMPowerPCCodeGen.a libLLVMPowerPCInfo.a libLLVMSparcCodeGen.a libLLVMSparcInfo.a libLLVMSupport.a libLLVMSystemZCodeGen.a libLLVMSystemZInfo.a libLLVMX86AsmParser.a libLLVMX86CodeGen.a libLLVMX86Disassembler.a libLLVMX86Info.a libLLVMXCoreCodeGen.a libLLVMXCoreInfo.a
+libLLVMMCJIT.a: libLLVMExecutionEngine.a libLLVMSupport.a libLLVMTarget.a
+libLLVMMCParser.a: libLLVMMC.a libLLVMSupport.a
+libLLVMMSP430AsmPrinter.a: libLLVMMC.a libLLVMSupport.a
+libLLVMMSP430CodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMMSP430AsmPrinter.a libLLVMMSP430Info.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMMSP430Info.a: libLLVMMC.a libLLVMSupport.a
+libLLVMMipsCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMMipsInfo.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMMipsInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMObject.a: libLLVMSupport.a
+libLLVMPTXCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMPTXInfo.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMPTXInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMPowerPCAsmPrinter.a: libLLVMMC.a libLLVMSupport.a
+libLLVMPowerPCCodeGen.a: libLLVMAnalysis.a libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMPowerPCAsmPrinter.a libLLVMPowerPCInfo.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a
+libLLVMPowerPCInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMScalarOpts.a: libLLVMAnalysis.a libLLVMCore.a libLLVMInstCombine.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a
+libLLVMSelectionDAG.a: libLLVMAnalysis.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a
+libLLVMSparcCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSparcInfo.a libLLVMSupport.a libLLVMTarget.a
+libLLVMSparcInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMSupport.a: 
+libLLVMSystemZCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMSystemZInfo.a libLLVMTarget.a
+libLLVMSystemZInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMTarget.a: libLLVMCore.a libLLVMMC.a libLLVMSupport.a
+libLLVMTransformUtils.a: libLLVMAnalysis.a libLLVMCore.a libLLVMSupport.a libLLVMTarget.a libLLVMipa.a
+libLLVMX86AsmParser.a: libLLVMMC.a libLLVMMCParser.a libLLVMSupport.a libLLVMTarget.a libLLVMX86Info.a
+libLLVMX86AsmPrinter.a: libLLVMMC.a libLLVMSupport.a libLLVMX86Utils.a
+libLLVMX86CodeGen.a: libLLVMAnalysis.a libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a libLLVMX86AsmPrinter.a libLLVMX86Info.a libLLVMX86Utils.a
+libLLVMX86Disassembler.a: libLLVMMC.a libLLVMSupport.a libLLVMX86Info.a
+libLLVMX86Info.a: libLLVMMC.a libLLVMSupport.a
+libLLVMX86Utils.a: libLLVMCore.a libLLVMSupport.a
+libLLVMXCoreCodeGen.a: libLLVMAsmPrinter.a libLLVMCodeGen.a libLLVMCore.a libLLVMMC.a libLLVMSelectionDAG.a libLLVMSupport.a libLLVMTarget.a libLLVMXCoreInfo.a
+libLLVMXCoreInfo.a: libLLVMMC.a libLLVMSupport.a
+libLLVMipa.a: libLLVMAnalysis.a libLLVMCore.a libLLVMSupport.a
+libLLVMipo.a: libLLVMAnalysis.a libLLVMCore.a libLLVMScalarOpts.a libLLVMSupport.a libLLVMTarget.a libLLVMTransformUtils.a libLLVMipa.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMMBlazeAsmParser.a  CMakeFiles/LLVMMBlazeAsmParser.dir/MBlazeAsmLexer.cpp.o CMakeFiles/LLVMMBlazeAsmParser.dir/MBlazeAsmParser.cpp.o
+/usr/bin/ranlib ../../../libLLVMMBlazeAsmParser.a

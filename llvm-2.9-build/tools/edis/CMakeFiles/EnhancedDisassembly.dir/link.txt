@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libEnhancedDisassembly.a  CMakeFiles/EnhancedDisassembly.dir/EDMain.cpp.o
+/usr/bin/ranlib ../../lib/libEnhancedDisassembly.a

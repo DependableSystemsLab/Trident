@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libLLVMObject.a  CMakeFiles/LLVMObject.dir/MachOObject.cpp.o CMakeFiles/LLVMObject.dir/ObjectFile.cpp.o CMakeFiles/LLVMObject.dir/COFFObjectFile.cpp.o CMakeFiles/LLVMObject.dir/ELFObjectFile.cpp.o
+/usr/bin/ranlib ../libLLVMObject.a

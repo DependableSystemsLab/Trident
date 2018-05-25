@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libLLVMExecutionEngine.a  CMakeFiles/LLVMExecutionEngine.dir/ExecutionEngine.cpp.o CMakeFiles/LLVMExecutionEngine.dir/ExecutionEngineBindings.cpp.o
+/usr/bin/ranlib ../libLLVMExecutionEngine.a

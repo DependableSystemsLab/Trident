@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMMBlazeAsmPrinter.a  CMakeFiles/LLVMMBlazeAsmPrinter.dir/MBlazeInstPrinter.cpp.o
+/usr/bin/ranlib ../../../libLLVMMBlazeAsmPrinter.a

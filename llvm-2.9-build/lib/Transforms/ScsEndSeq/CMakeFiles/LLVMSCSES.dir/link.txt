@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLVMSCSES.so -o ../../LLVMSCSES.so CMakeFiles/LLVMSCSES.dir/Hello.cpp.o 

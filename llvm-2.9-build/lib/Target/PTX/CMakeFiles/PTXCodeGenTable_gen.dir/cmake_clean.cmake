@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "PTXGenAsmWriter.inc.tmp"
+  "PTXGenAsmWriter.inc"
+  "PTXGenDAGISel.inc.tmp"
+  "PTXGenDAGISel.inc"
+  "PTXGenInstrInfo.inc.tmp"
+  "PTXGenInstrInfo.inc"
+  "PTXGenInstrNames.inc.tmp"
+  "PTXGenInstrNames.inc"
+  "PTXGenRegisterInfo.inc.tmp"
+  "PTXGenRegisterInfo.inc"
+  "PTXGenRegisterInfo.h.inc.tmp"
+  "PTXGenRegisterInfo.h.inc"
+  "PTXGenRegisterNames.inc.tmp"
+  "PTXGenRegisterNames.inc"
+  "PTXGenSubtarget.inc.tmp"
+  "PTXGenSubtarget.inc"
+  "CMakeFiles/PTXCodeGenTable_gen"
+  "PTXGenAsmWriter.inc"
+  "PTXGenDAGISel.inc"
+  "PTXGenInstrInfo.inc"
+  "PTXGenInstrNames.inc"
+  "PTXGenRegisterInfo.inc"
+  "PTXGenRegisterInfo.h.inc"
+  "PTXGenRegisterNames.inc"
+  "PTXGenSubtarget.inc"
+  "PTXGenAsmWriter.inc.tmp"
+  "PTXGenDAGISel.inc.tmp"
+  "PTXGenInstrInfo.inc.tmp"
+  "PTXGenInstrNames.inc.tmp"
+  "PTXGenRegisterInfo.inc.tmp"
+  "PTXGenRegisterInfo.h.inc.tmp"
+  "PTXGenRegisterNames.inc.tmp"
+  "PTXGenSubtarget.inc.tmp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/PTXCodeGenTable_gen.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

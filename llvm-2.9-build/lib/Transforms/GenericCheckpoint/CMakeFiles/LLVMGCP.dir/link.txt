@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLVMGCP.so -o ../../LLVMGCP.so CMakeFiles/LLVMGCP.dir/Hello.cpp.o 

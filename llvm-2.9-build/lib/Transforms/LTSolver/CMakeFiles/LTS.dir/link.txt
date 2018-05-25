@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LTS.so -o ../../LTS.so CMakeFiles/LTS.dir/Hello.cpp.o 

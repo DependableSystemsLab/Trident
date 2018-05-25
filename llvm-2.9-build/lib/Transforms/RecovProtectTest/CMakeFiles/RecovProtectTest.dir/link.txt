@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,RecovProtectTest.so -o ../../RecovProtectTest.so CMakeFiles/RecovProtectTest.dir/Hello.cpp.o 

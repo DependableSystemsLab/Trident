@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMMBlazeInfo.a  CMakeFiles/LLVMMBlazeInfo.dir/MBlazeTargetInfo.cpp.o
+/usr/bin/ranlib ../../../libLLVMMBlazeInfo.a

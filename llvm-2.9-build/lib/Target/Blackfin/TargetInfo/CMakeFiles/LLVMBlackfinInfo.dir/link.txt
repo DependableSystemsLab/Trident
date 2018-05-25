@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMBlackfinInfo.a  CMakeFiles/LLVMBlackfinInfo.dir/BlackfinTargetInfo.cpp.o
+/usr/bin/ranlib ../../../libLLVMBlackfinInfo.a

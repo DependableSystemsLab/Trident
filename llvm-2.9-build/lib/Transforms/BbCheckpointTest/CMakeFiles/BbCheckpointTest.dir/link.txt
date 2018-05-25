@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,BbCheckpointTest.so -o ../../BbCheckpointTest.so CMakeFiles/BbCheckpointTest.dir/Hello.cpp.o 

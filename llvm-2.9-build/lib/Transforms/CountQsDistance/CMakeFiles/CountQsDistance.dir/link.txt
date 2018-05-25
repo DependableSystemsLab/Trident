@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,CountQsDistance.so -o ../../CountQsDistance.so CMakeFiles/CountQsDistance.dir/Hello.cpp.o 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,ModelDdg.so -o ../../ModelDdg.so CMakeFiles/ModelDdg.dir/Hello.cpp.o 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,FDL.so -o ../../FDL.so CMakeFiles/FDL.dir/Hello.cpp.o 

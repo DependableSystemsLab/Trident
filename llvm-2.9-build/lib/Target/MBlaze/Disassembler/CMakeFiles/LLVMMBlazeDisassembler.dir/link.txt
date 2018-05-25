@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMMBlazeDisassembler.a  CMakeFiles/LLVMMBlazeDisassembler.dir/MBlazeDisassembler.cpp.o
+/usr/bin/ranlib ../../../libLLVMMBlazeDisassembler.a

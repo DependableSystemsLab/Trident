@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,DMR.so -o ../../DMR.so CMakeFiles/DMR.dir/Hello.cpp.o 

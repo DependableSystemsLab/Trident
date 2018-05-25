@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLVMDT.so -o ../../LLVMDT.so CMakeFiles/LLVMDT.dir/DynTrace.cpp.o CMakeFiles/LLVMDT.dir/ChainNode.cpp.o CMakeFiles/LLVMDT.dir/Sdds.cpp.o 

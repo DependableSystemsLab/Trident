@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../libLLVMCBackend.a  CMakeFiles/LLVMCBackend.dir/CBackend.cpp.o
+/usr/bin/ranlib ../../libLLVMCBackend.a

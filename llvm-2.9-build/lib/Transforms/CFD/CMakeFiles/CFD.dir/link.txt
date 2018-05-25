@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,CFD.so -o ../../CFD.so CMakeFiles/CFD.dir/Hello.cpp.o 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,Liveness.so -o ../../Liveness.so CMakeFiles/Liveness.dir/Hello.cpp.o 

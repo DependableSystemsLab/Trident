@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LoadMarker.so -o ../../LoadMarker.so CMakeFiles/LoadMarker.dir/Hello.cpp.o 

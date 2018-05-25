@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,LLM.so -o ../../LLM.so CMakeFiles/LLM.dir/Hello.cpp.o 

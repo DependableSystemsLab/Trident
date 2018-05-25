@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -fPIC -fno-rtti   -shared -Wl,-soname,TotalCount.so -o ../../TotalCount.so CMakeFiles/TotalCount.dir/Hello.cpp.o 

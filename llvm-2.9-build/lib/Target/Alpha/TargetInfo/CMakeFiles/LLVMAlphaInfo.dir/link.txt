@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../libLLVMAlphaInfo.a  CMakeFiles/LLVMAlphaInfo.dir/AlphaTargetInfo.cpp.o
+/usr/bin/ranlib ../../../libLLVMAlphaInfo.a
