@@ -1,6 +1,6 @@
 # Trident Project
 
-Trident analytically predicts the SDC probability of a given program and its instructions without any fault injection.
+Trident analytically predicts the SDC probability of a given program and its instructions without any fault injection. It is implemented as a set of LLVM compiler passes driven by python scripts. These passes are located in `./llvm-2.9/lib/Transforms/`.
 
 Getting Started
 --------------
