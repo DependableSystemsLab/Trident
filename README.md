@@ -27,7 +27,7 @@ Take Blackscholes benchmark as an example, go to `./benchmarks/blackscholes/`
 Execution
 --------------
 
-1. Profile the dynamic footprint of instructions of the program. This can be done in `./inst_count` folder by running `bash run_sampling.sh`. A log file called `fi_breakdown.txt` is generated
+1. Profile the dynamic footprint of the instructions of the program. This can be done in `./inst_count` folder by running `bash run_sampling.sh`. A log file called `fi_breakdown.txt` is generated
 2. Copy the log file to the folder of the program under test (`./benchmarks/blackscholes/`). Trident will read and predict the SDC probabilities of the instructions provided in this log file, and aggregate the overall SDC probability of the program based on their profiled dynamic footprint
 3. To execute Trident, do `python prepare blackscholes "1 in_4.txt output.txt"` in the folder `./benchmarks/blackscholes/`. The predicted results are in `prediction.results`
 
