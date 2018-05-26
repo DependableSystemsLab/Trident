@@ -14,6 +14,8 @@ Prerequisites
 2. LLVM-GCC(v2.9)
 3. Python 2.7
 
+Tested on Ubuntu 12.04 and 14.04 LTS
+
 Preparation
 --------------
 
