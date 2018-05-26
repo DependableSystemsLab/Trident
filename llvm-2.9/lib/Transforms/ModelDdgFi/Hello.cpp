@@ -1,0 +1,188 @@
+#include "llvm/Pass.h"
+#include "llvm/Module.h"
+#include "llvm/Function.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/Type.h"
+#include "llvm/Instructions.h"
+#include "llvm/Instruction.h"
+#include "llvm/Support/IRBuilder.h"
+#include <string>
+
+
+using namespace llvm;
+
+namespace{
+	struct bishe_insert : public ModulePass{
+		static char ID;   
+		Module *module;
+
+		bishe_insert() : ModulePass(ID) {}
+
+		virtual bool runOnModule(Module &M)
+		{
+
+			module = &M;
+
+			for(Module::iterator F = M.begin(), E = M.end(); F!= E; ++F)
+			{
+				//errs() << F->getName() << '\n';
+				std::string functionName = F->getName();
+				if(functionName.find("injectFault") != std::string::npos){
+					continue;
+				}
+
+
+				for(Function::iterator BB = F->begin(), E = F->end(); BB != E; ++BB)
+				{
+					bishe_insert::runOnBasicBlock(BB, M.getContext());
+				}
+			}
+
+			errs() << "Instrumenting for DDG ..." << '\n';
+			return false;
+		}
+
+		virtual bool runOnBasicBlock(Function::iterator &BB, LLVMContext &context)
+		{
+			/* 
+			   1. Get LLFI index for the BB, use the first inst index.
+			   2. Insert dump BB index call.
+			 */
+
+
+			for(BasicBlock::iterator BI = BB->begin(), BE = BB->end(); BI != BE; ++BI)           
+			{
+				long llfiIndex = getLLFIIndexofInst(BI);
+				//errs() << BI->getName() << "\n";
+
+				// Dump for cmp inst
+				if(isa<CmpInst>(BI)){
+				//	addCmpDumpFunctionCall(BI, llfiIndex, module);
+				}else if(isa<LoadInst>(BI)){
+					// Dump for load inst
+				//	addLoadDumpFunctionCall(BI, llfiIndex, module);
+				}else if(isa<StoreInst>(BI)){
+					// Dump for store inst
+				//	addStoreDumpFunctionCall(BI, llfiIndex, module);
+				}else if(BI->getName().find("indvar") != std::string::npos){
+					// Dump for indvar
+				/*	BasicBlock::iterator nextInst = BI;
+					while(isa<PHINode>(nextInst)){
+						nextInst++;
+					}		
+					addIndvarDumpFunctionCall(nextInst, llfiIndex, module);
+				*/
+				}
+			}
+	
+			long bbIndex = 0;
+			for(BasicBlock::iterator BI = BB->begin(), BE = BB->end(); BI != BE; ++BI)           
+			{
+				long llfiIndex = getLLFIIndexofInst(BI);
+				BasicBlock::iterator nextInst = BI;
+
+				if(isa<PHINode>(nextInst) || isa<CallInst>(nextInst)){
+					while(isa<PHINode>(nextInst) || isa<CallInst>(nextInst)){
+						nextInst++;
+						bbIndex = llfiIndex;
+					}	
+				}else{
+					bbIndex = llfiIndex;
+				}
+				
+				
+				addBbIndexDumpFunctionCall(nextInst, bbIndex, module);
+
+				break;
+			}
+
+			return true;
+		}
+
+
+		////////////////////////////////////////////////////////////
+
+		// Call to insert bb index
+		void addBbIndexDumpFunctionCall(Instruction* insertLoc, long bbIndex, Module* module){
+			std::vector<Value*> checker_args(1);
+			Value* bbIndexValue = ConstantInt::get(Type::getInt64Ty(module->getContext()), bbIndex);
+			checker_args[0] = bbIndexValue;
+
+			std::vector<const Type*> checker_arg_types(1);
+			checker_arg_types[0] = bbIndexValue->getType(); 
+
+			FunctionType* checker_type = FunctionType::get(Type::getVoidTy(module->getContext()), checker_arg_types, false);
+			Constant* checker_handler_c = module->getOrInsertFunction("dumpBbIndex", checker_type);
+			Function* checker_handler = dyn_cast<Function>(checker_handler_c);
+			CallInst::Create(checker_handler, checker_args.begin(), checker_args.end(),"", insertLoc);
+		}
+			
+		
+		void addCmpDumpFunctionCall(Instruction* insertLoc, long instIndex, Module* module){
+			std::vector<Value*> checker_args(1);
+			Value* instIndexValue = ConstantInt::get(Type::getInt64Ty(module->getContext()), instIndex);
+			checker_args[0] = instIndexValue;
+
+			std::vector<const Type*> checker_arg_types(1);
+			checker_arg_types[0] = instIndexValue->getType(); 
+
+			FunctionType* checker_type = FunctionType::get(Type::getVoidTy(module->getContext()), checker_arg_types, false);
+			Constant* checker_handler_c = module->getOrInsertFunction("dumpCmpInst", checker_type);
+			Function* checker_handler = dyn_cast<Function>(checker_handler_c);
+			CallInst::Create(checker_handler, checker_args.begin(), checker_args.end(),"", insertLoc);
+		}
+
+		void addLoadDumpFunctionCall(Instruction* insertLoc, long instIndex, Module* module){
+			std::vector<Value*> checker_args(1);
+			Value* instIndexValue = ConstantInt::get(Type::getInt64Ty(module->getContext()), instIndex);
+			checker_args[0] = instIndexValue;
+
+			std::vector<const Type*> checker_arg_types(1);
+			checker_arg_types[0] = instIndexValue->getType(); 
+
+			FunctionType* checker_type = FunctionType::get(Type::getVoidTy(module->getContext()), checker_arg_types, false);
+			Constant* checker_handler_c = module->getOrInsertFunction("dumpLoadInst", checker_type);
+			Function* checker_handler = dyn_cast<Function>(checker_handler_c);
+			CallInst::Create(checker_handler, checker_args.begin(), checker_args.end(), "", insertLoc);
+		}
+
+		void addStoreDumpFunctionCall(Instruction* insertLoc, long instIndex, Module* module){
+			std::vector<Value*> checker_args(1);
+			Value* instIndexValue = ConstantInt::get(Type::getInt64Ty(module->getContext()), instIndex);
+			checker_args[0] = instIndexValue;
+
+			std::vector<const Type*> checker_arg_types(1);
+			checker_arg_types[0] = instIndexValue->getType(); 
+
+			FunctionType* checker_type = FunctionType::get(Type::getVoidTy(module->getContext()), checker_arg_types, false);
+			Constant* checker_handler_c = module->getOrInsertFunction("dumpStoreInst", checker_type);
+			Function* checker_handler = dyn_cast<Function>(checker_handler_c);
+			CallInst::Create(checker_handler, checker_args.begin(), checker_args.end(), "", insertLoc);
+		}
+
+		void addIndvarDumpFunctionCall(Instruction* insertLoc, long instIndex, Module* module){
+			std::vector<Value*> checker_args(1);
+			Value* instIndexValue = ConstantInt::get(Type::getInt64Ty(module->getContext()), instIndex);
+			checker_args[0] = instIndexValue;
+
+			std::vector<const Type*> checker_arg_types(1);
+			checker_arg_types[0] = instIndexValue->getType(); 
+
+			FunctionType* checker_type = FunctionType::get(Type::getVoidTy(module->getContext()), checker_arg_types, false);
+			Constant* checker_handler_c = module->getOrInsertFunction("dumpIndvarInst", checker_type);
+			Function* checker_handler = dyn_cast<Function>(checker_handler_c);
+			CallInst::Create(checker_handler, checker_args.begin(), checker_args.end(), "", insertLoc);	
+		}
+
+		long getLLFIIndexofInst(Instruction *inst) {
+			MDNode *mdnode = inst->getMetadata("llfi_index");
+			if (mdnode) {
+				ConstantInt *cns_index = dyn_cast<ConstantInt>(mdnode->getOperand(0));
+				return cns_index->getSExtValue();
+			}
+			return 0;
+		}
+	};
+}
+char bishe_insert::ID = 0;
+static RegisterPass<bishe_insert> X("bishe_insert", "test function exist", false, false);
