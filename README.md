@@ -33,12 +33,25 @@ Execution
 2. Copy the log file to the folder of the program under test (`./benchmarks/blackscholes/`). Trident will read and predict the SDC probabilities of the instructions provided in this log file, and aggregate the overall SDC probability of the program based on their profiled dynamic footprint
 3. To execute Trident, do `python prepare blackscholes "1 in_4.txt output.txt"` in the folder `./benchmarks/blackscholes/`. The predicted results are in `prediction.results`
 
+
+vTrident
+--------------
+
+vTrident is an extension of Trident. It simplifies the memory dependency sub-model of Trident to identify the variation of the SDC probablity of a given program with multiple program inputs. As a result, vTrident is much faster than either fault injection or Trident to bound the SDC probability of the program with multiple inputs.
+
+To use vTrident, configure `driver.py` with the program inputs, and execute it.
+
+
 Paper
 --------------
 
 Modeling Soft Error Propagation in Programs
 
 http://blogs.ubc.ca/karthik/2018/03/04/modeling-soft-error-propagation-in-programs/
+
+Modeling Input Dependent Error Propagation in Programs
+
+http://blogs.ubc.ca/karthik/2018/03/04/modeling-input-dependent-error-propagation-in-programs/
 
 
 Video Demo
