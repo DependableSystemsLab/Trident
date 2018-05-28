@@ -39,7 +39,7 @@ vTrident
 
 vTrident is an extension of Trident. It simplifies the memory dependency sub-model of Trident to identify the variation of the SDC probablity of a given program with multiple program inputs. As a result, vTrident is much faster than either fault injection or Trident to bound the SDC probability of the program with multiple inputs.
 
-To use vTrident, configure `driver.py` with the program inputs, and execute it.
+To use vTrident, configure `driver.py` with the program inputs, and execute it. The dynamic footprint of the instructions of the program with each program input should be put in `data` folder.
 
 
 Paper
