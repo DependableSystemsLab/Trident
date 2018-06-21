@@ -54,9 +54,3 @@ Modeling Input Dependent Error Propagation in Programs
 http://blogs.ubc.ca/karthik/2018/03/04/modeling-input-dependent-error-propagation-in-programs/
 
 
-Video Demo
---------------
-
-The video walks through the setup and execution of Trident.
-
-https://youtu.be/aPQW3EnF6lE
