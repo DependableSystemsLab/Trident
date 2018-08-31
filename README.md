@@ -19,8 +19,8 @@ Tested on Ubuntu 12.04 and 14.04 LTS
 Preparation 
 ----------- 
 
-1. Configure the paths based on your environment in `./test/config.py` file. 
-  
+1. Configure the path for llvm_gcc binary (LLVMGCC) based on your environment in `./test/config.py` and `./inst_count/run_sampling.sh` file.
+
 2. Put the compiled LLVM IR file of the program in the `./test` and `./inst_count folder` directories. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-profile_linked.ll` 
 
 3. Put the program input file (if any) in `./test` and `./inst_count` directories. 
