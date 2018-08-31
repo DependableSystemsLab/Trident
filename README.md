@@ -11,7 +11,7 @@ Prerequisites
 --------------
 
 1. The packages and dependencies required by LLFI(v2.9) and LLVM(v2.9)
-2. LLVM-GCC(v2.9)
+2. LLVM-GCC 4.2.1 (LLVM build 2.9)
 3. Python 2.7
 
 Tested on Ubuntu 12.04 and 14.04 LTS
@@ -19,7 +19,7 @@ Tested on Ubuntu 12.04 and 14.04 LTS
 Preparation 
 ----------- 
 
-1. Configure the path for llvm_gcc binary (LLVMGCC) based on your environment in `./test/config.py` and `./inst_count/run_sampling.sh` file.
+1. Configure the path for llvm_gcc binary (LLVMGCC) and Trident checkout path (ROOT) based on your environment in `./test/config.py` and `./inst_count/run_sampling.sh` file.
 
 2. Put the compiled LLVM IR file of the program in the `./test` and `./inst_count folder` directories. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-profile_linked.ll` 
 
