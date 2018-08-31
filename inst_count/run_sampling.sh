@@ -1,12 +1,11 @@
-# Update the path for LLVM GCC binary and checkput path of Trident
+# Update the path for LLVM GCC binary and checkout path of Trident
 LLVMGCC="llvm-gcc"
-ROOT= ""
+ROOT=""
 
-OPT=$ROOT"llvm-2.9-build/bin/opt" 
-LLVMGCC="llvm-gcc" 
-LLVMLINK=$ROOT"llvm-2.9-build/bin/llvm-link"
-LLVMPASS_FOLDER=$ROOT"llvm-2.9-build/lib" 
-LLI=$ROOT"llvm-2.9-build/bin/lli"
+OPT=$ROOT"/llvm-2.9-build/bin/opt"  
+LLVMLINK=$ROOT"/llvm-2.9-build/bin/llvm-link"
+LLVMPASS_FOLDER=$ROOT"/llvm-2.9-build/lib" 
+LLI=$ROOT"/llvm-2.9-build/bin/lli"
 PYTHON="python"
 TRANS_NAME="/InstSampling.so"
 TRANSFORM_PATH=$LLVMPASS_FOLDER$TRANS_NAME

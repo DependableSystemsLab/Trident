@@ -4,7 +4,7 @@ import os
 LLVMGCC="llvm-gcc"
 ROOT = ""
 
-# Update the paths according to your environemnt
+# Update the paths according to your environment
 OPT= ROOT + "llvm-2.9-build/bin/opt"  
 LLVMLINK= ROOT + "llvm-2.9-build/bin/llvm-link" 
 LLVMPASS_FOLDER= ROOT + "llvm-2.9-build/lib/" 
