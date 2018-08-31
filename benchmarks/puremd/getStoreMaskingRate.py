@@ -2,6 +2,7 @@
 
 import os, sys
 import subprocess
+from config import OPT,LLVMPASS_FOLDER
 
 
 ##########################
@@ -285,7 +286,7 @@ def getMaskingRateFromInst(initStoreIndex):
 
 				# EXECUTE OPT and add to terminator list
 				loadSelectStr = "-select_index=" + `loadIndex`
-				command = ["/home/gpli/llvm-2.9-build/bin/opt", "-S", "-load", "/home/gpli/llvm-2.9-build/lib/LLVMSCSES.so", "-bishe_insert", loadSelectStr, irPath, "-o", "null"]
+				command = [OPT, "-S", "-load", LLVMPASS_FOLDER + "/LLVMSCSES.so", "-bishe_insert", loadSelectStr, irPath, "-o", "null"]
 				p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 				diffInsts = p.stdout.read()
 				loadToTerminatorCacheDic[int(loadIndex)] = diffInsts

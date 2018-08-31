@@ -25,7 +25,7 @@ Preparation
 
 3. Put the program input file (if any) in `./test` and `./inst_count` directories. 
 
-4. Choose the LLVM IR instructions that are considered as the program output in `./test/getStoreMaskingRate.py` (line:297) ge 
+4. Choose the LLVM IR instructions that are considered as the program output in `./test/getStoreMaskingRate.py` (line:297).
 
 5. Update the paths, indexed LLVM IR file name (<program_name>), input command (<program_input>) and output file name (<output_file>) if any in `./inst-count/run_sampling.sh` script according to the program being tested. 
 
