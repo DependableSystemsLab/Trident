@@ -11,28 +11,35 @@ Prerequisites
 --------------
 
 1. The packages and dependencies required by LLFI(v2.9) and LLVM(v2.9)
-2. LLVM-GCC(v2.9)
+2. LLVM-GCC 4.2.1 (LLVM build 2.9)
 3. Python 2.7
 
 Tested on Ubuntu 12.04 and 14.04 LTS
 
-Preparation
---------------
+Preparation 
+----------- 
 
-Take Blackscholes benchmark as an example, go to `./benchmarks/blackscholes/`
+1. Configure the path for llvm_gcc binary (LLVMGCC) and Trident checkout (ROOT) based on your environment in `./test/config.py` and `./inst_count/run_sampling.sh` file.
 
-1. Put the compiled LLVM IR file of the program in the folder. The instructions should be indexed. For example, using `instrument` in LLFI
-2. Put the program input file (if any) in the same folder
-3. Choose the LLVM IR instructions that are considered as the program output in `getStoreMaskingRate.py` (line:298)
-4. Configure the paths based on your envirnment in `prepare.py`
+2. Put the compiled LLVM IR file of the program in the `./test` and `./inst_count folder` directories. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-profile_linked.ll` 
 
-Execution
---------------
+3. Put the program input file (if any) in `./test` and `./inst_count` directories. 
 
-1. Profile the dynamic footprint of the instructions of the program. This can be done in `./inst_count` folder by running `bash run_sampling.sh`. A log file called `fi_breakdown.txt` is generated
-2. Copy the log file to the folder of the program under test (`./benchmarks/blackscholes/`). Trident will read and predict the SDC probabilities of the instructions provided in this log file, and aggregate the overall SDC probability of the program based on their profiled dynamic footprint
-3. To execute Trident, do `python prepare blackscholes "1 in_4.txt output.txt"` in the folder `./benchmarks/blackscholes/`. The predicted results are in `prediction.results`
+4. Choose the LLVM IR instructions that are considered as the program output in `./test/getStoreMaskingRate.py` (line:297).
 
+5. Update the paths, indexed LLVM IR file name (<program_name>), input command (<program_input>) and output file name (<output_file>) if any in `./inst-count/run_sampling.sh` script according to the program being tested. 
+
+
+Execution 
+---------- 
+
+1. Profile the dynamic footprint of the instructions of the program. This can be done in `./inst_count` folder. Run the command bash `run_sampling.sh`. A log file called `fi_breakdown.txt` is generated. 
+
+2. Copy the log file `fi_breakdown.txt` to the `./test` folder. Trident will read and predict the SDC probabilities of the instructions provided in this log file.
+
+3. To execute Trident, run the command `python prepare.py <program_name> "input command"` in  in `./test` folder. For example for blackscholes bench mark use the command `python prepare.py blackscholes "1 in_4.txt output.txt"`. 
+
+4. Trident will aggregate the overall SDC probability of the program based on their profiled dynamic footprint and store the result in `prediction.results` after command completion. 
 
 vTrident
 --------------
@@ -52,5 +59,3 @@ http://blogs.ubc.ca/karthik/2018/03/04/modeling-soft-error-propagation-in-progra
 Modeling Input Dependent Error Propagation in Programs
 
 http://blogs.ubc.ca/karthik/2018/03/04/modeling-input-dependent-error-propagation-in-programs/
-
-

@@ -1,18 +1,12 @@
 #! /usr/bin/python
 
 import os, sys
+from config import OPT,LLVMPASS_FOLDER,LLVMGCC,LLVMLINK,LLI,PYTHON
 
 ####################################################
 bmName = sys.argv[1]
 irPath = bmName + "-llfi_index.ll"
 inputCommand = sys.argv[2]
-####################################################
-OPT = "~/llvm-2.9-build/bin/opt"
-LLVMGCC = "llvm-gcc"
-LLVMLINK = "llvm-link"
-LLVMPASS_FOLDER = "~/llvm-2.9-build/lib/"
-LLI = "lli"
-PYTHON = "python"
 ####################################################
 
 # For profile_call_prob_result.txt

@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import sys, os, subprocess
+from config import OPT,LLVMPASS_FOLDER
 
 irPath = sys.argv[1]
 
@@ -8,7 +9,7 @@ print "Generating a list of loop-terminating CMPs in loop_terminating_cmp_list.t
 
 os.system("rm loop_terminating_cmp_list.txt")
 
-command = ["/home/gpli/llvm-2.9-build/bin/opt", "-S", "-load", "/home/gpli/llvm-2.9-build/lib/CMPTYPE.so", "-loop-dep", irPath, "-o", "null"]
+command = [OPT, "-S", "-load", LLVMPASS_FOLDER + "/CMPTYPE.so", "-loop-dep", irPath, "-o", "null"]
 p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 diffLines = p.stdout.read()
 

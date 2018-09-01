@@ -1,7 +1,7 @@
 #! /user/bin/python
 
 import sys, os, subprocess
-
+from config import OPT,LLVMPASS_FOLDER
 
 ############################
 irPath = sys.argv[1]
@@ -53,7 +53,7 @@ os.system("rm null")
 # Run Static-instruction-level Masking (SIM)
 ############################################################################
 selectIndexStr = "-select_index=" + `targetIndex`
-command = ["/home/gpli/llvm-2.9-build/bin/opt", "-S", "-load", "/home/gpli/llvm-2.9-build/lib/SIM.so", "-bishe_insert", selectIndexStr, irPath, "-o", "null", "-select_stuples_file=simplified_inst_tuples.txt"]
+command = [OPT, "-S", "-load", LLVMPASS_FOLDER + "/SIM.so", "-bishe_insert", selectIndexStr, irPath, "-o", "null", "-select_stuples_file=simplified_inst_tuples.txt"]
 p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 simOutput = p.stdout.read()
 

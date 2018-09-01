@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import subprocess, os, sys
+from config import OPT,LLVMPASS_FOLDER
 
 ####################################################################
 irPath = sys.argv[1]
@@ -32,7 +33,7 @@ if targetCmpIndex not in ltCmpList:
 	# DEBUG
 	print "None-loop-terminating CMP: "	
 
-	command = ["/home/gpli/llvm-2.9-build/bin/opt", "-S", "-load", "/home/gpli/llvm-2.9-build/lib/NLTS.so", "-loop-dep", irPath, "-o", "null", "-select_cmp_prob_file=./profile_cmp_prob_result.txt", "-select_ltcmp_file=./loop_terminating_cmp_list.txt", "-select_target_index=" + `targetCmpIndex`]
+	command = [OPT, "-S", "-load", LLVMPASS_FOLDER + "/NLTS.so", "-loop-dep", irPath, "-o", "null", "-select_cmp_prob_file=./profile_cmp_prob_result.txt", "-select_ltcmp_file=./loop_terminating_cmp_list.txt", "-select_target_index=" + `targetCmpIndex`]
 	p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 	diffLines = p.stdout.read()
 	print diffLines
@@ -42,7 +43,7 @@ else:
 	# DEBUG
 	print "Loop-terminating CMP: "	
 
-	command = ["/home/gpli/llvm-2.9-build/bin/opt", "-S", "-load", "/home/gpli/llvm-2.9-build/lib/LTS.so", "-loop-dep", irPath, "-o", "null", "-select_cmp_prob_file=./profile_cmp_prob_result.txt", "-select_ltcmp_file=./loop_terminating_cmp_list.txt", "-select_target_index=" + `targetCmpIndex`]
+	command = [OPT, "-S", "-load", LLVMPASS_FOLDER + "/LTS.so", "-loop-dep", irPath, "-o", "null", "-select_cmp_prob_file=./profile_cmp_prob_result.txt", "-select_ltcmp_file=./loop_terminating_cmp_list.txt", "-select_target_index=" + `targetCmpIndex`]
 	p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 	diffLines = p.stdout.read()
 	print diffLines
