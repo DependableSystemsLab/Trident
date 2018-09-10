@@ -16,38 +16,56 @@ Prerequisites
 
 Tested on Ubuntu 12.04 and 14.04 LTS
 
-Preparation 
------------ 
+Preparation - Trident 
+---------------------
 
-1. Configure the path for llvm_gcc binary (LLVMGCC) and Trident checkout (ROOT) based on your environment in `./test/config.py` and `./inst_count/run_sampling.sh` file.
+1. Configure the path for llvm_gcc binary (LLVMGCC) and Trident checkout (ROOT) based on your environment in `./test/Tridnet/config.py` and `./inst_count/run_sampling.sh` file.
 
-2. Put the compiled LLVM IR file of the program in the `./test` and `./inst_count folder` directories. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-profile_linked.ll` 
+2. Put the compiled LLVM IR file of the program in the `./test/Trident` and `./inst_count folder` directories. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-profile_linked.ll` 
 
-3. Put the program input file (if any) in `./test` and `./inst_count` directories. 
+3. Put the program input file (if any) in `./test/Trident` and `./inst_count` directories. 
 
-4. Choose the LLVM IR instructions that are considered as the program output in `./test/getStoreMaskingRate.py` (line:297).
+4. Choose the LLVM IR instructions that are considered as the program output in `./test/Trident/getStoreMaskingRate.py` (line:297).
 
 5. Update the paths, indexed LLVM IR file name (<program_name>), input command (<program_input>) and output file name (<output_file>) if any in `./inst-count/run_sampling.sh` script according to the program being tested. 
 
 
-Execution 
----------- 
+Execution - Trident
+-------------------
 
 1. Profile the dynamic footprint of the instructions of the program. This can be done in `./inst_count` folder. Run the command bash `run_sampling.sh`. A log file called `fi_breakdown.txt` is generated. 
 
 2. Copy the log file `fi_breakdown.txt` to the `./test` folder. Trident will read and predict the SDC probabilities of the instructions provided in this log file.
 
-3. To execute Trident, run the command `python prepare.py <program_name> "input command"` in  in `./test` folder. For example for blackscholes bench mark use the command `python prepare.py blackscholes "1 in_4.txt output.txt"`. 
+3. To execute Trident, run the command `python prepare.py <program_name> "input command"` in `./test/Trident` folder. For example for blackscholes bench mark use the command `python prepare.py blackscholes "1 in_4.txt output.txt"`. 
 
-4. Trident will aggregate the overall SDC probability of the program based on their profiled dynamic footprint and store the result in `prediction.results` after command completion. 
+4. Trident will aggregate the overall SDC probability of the program based on their profiled dynamic footprint and store the result in `./test/Trident/prediction.results` after command completion. 
 
 vTrident
 --------------
 
 vTrident is an extension of Trident. It simplifies the memory dependency sub-model of Trident to identify the variation of the SDC probablity of a given program with multiple program inputs. As a result, vTrident is much faster than either fault injection or Trident to bound the SDC probability of the program with multiple inputs.
 
-To use vTrident, configure `driver.py` with the program inputs, and execute it. The dynamic footprint of the instructions of the program with each program input should be put in `data` folder.
+Preparation - vTrident 
+---------------------
 
+1. Profile the dynamic footprint of all the instruction of the program for all the inputs following steps provided for Trident. Rename the produced `fi_breakdown.txt` for each input as `input_n-fi.txt` where n is 0 and increments for each input.
+
+2. Place all the produced `input_n-fi.txt` files in `./test/vTrident/data` directory.
+
+3. Put the compiled LLVM IR file of the program in the `./test/vTrident`. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-llfi_index.ll` 
+
+4. Put the program input files (if any) for all inputs in `./test/vTrident`. 
+
+5. Choose the LLVM IR instructions that are considered as the program output in `./test/vTrident/getStoreMaskingRate.py` (line:297).
+
+6. Configure the path for llvm_gcc binary (LLVMGCC),Trident checkout (ROOT), prgram_name used in step 3 (bmName) and input commands for all the inputs (inputList) in `./test/vTrident/config.py`.
+
+
+Execution - vTrident
+-------------------
+
+To use vTrident execute the file `./test/vTrident/driver.py`. After the execution of vTrident is complete, range of SDC and the input that can be used for finding median SDC using FI are provided in console and `./test/vTrident/results/variation.results`.
 
 Paper
 --------------
