@@ -1,8 +1,8 @@
-import sys, os
+import sys, os, math
 from config import bmName,fiFilePrefix,irPath,inputList
 
 minFileNo = 0
-maxFileNo = len(inputList)
+maxFileNo = len(inputList) - 1
 
 inC = 0
 os.system("rm results -rf")
@@ -34,7 +34,7 @@ median_index =  SDC_list.index(sorted(SDC_list, key=float)[median_index])
 with open(os.getcwd() + "/results" + "/variation.results", 'w') as pf:
 	pf.write("Maximum SDC: " + format(max_sdc,'.2f') + " %\n")
 	pf.write("Minimum SDC: " + format(min_sdc,'.2f') + " %\n")
-	pf.write("SDC Range  : " + format(range_sdc, '.2f') + "%\n")
+	pf.write("SDC Range  : " + format(range_sdc, '.2f') + " %\n")
 	pf.write("\nInput to be used for Fault injection: " + "input_" + `median_index` + "-fi.txt" +"\n")
 
 with open(os.getcwd() + "/results" + "/variation.results", 'r') as pf:
