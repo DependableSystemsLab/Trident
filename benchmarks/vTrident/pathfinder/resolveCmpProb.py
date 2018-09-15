@@ -109,6 +109,8 @@ for cmpIndex in cmpLineDic:
 			if aV2 != 0:
 				aV2BitNo = math.floor( math.log( abs(aV2), 2 ) ) + 1
 			#print `aV1` + " " + `aV1BitNo`
+			if cmpIndex not in ePFDic or cmpIndex not in ePTDic:
+				continue
 			fProb = ePFDic[cmpIndex]
 			tProb = ePTDic[cmpIndex]
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define listSize 10000
+#define listSize 10000000
 
 int initFlag = 0;
 int instList[listSize];

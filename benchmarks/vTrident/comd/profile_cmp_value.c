@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define listSize 100000
+#define listSize 10000000
 int initFlag = 0;
 long long icmpValue1List[listSize];
 long long icmpValue2List[listSize];

@@ -1,4 +1,4 @@
-import sys, os, subprocess
+import sys, os, subprocess, math
 
 irPath = sys.argv[1]
 
@@ -20,9 +20,16 @@ with open("fi_breakdown.txt", 'r') as rf:
 			
 			if diffLines == "":
 				continue
+				
+			if "*" not in diffLines:
+				continue
+				
 			crashR = float(diffLines.split("\n")[-2].split(": ")[1].replace("\n", ""))
 			maskingR = float(diffLines.split("\n")[-3].split(": ")[1].replace("\n", ""))
 			sdcR = float(diffLines.split("\n")[-4].split(": ")[1].replace("\n", ""))
+
+			if math.isnan(sdcR) == True or math.isnan(maskingR) == True or math.isnan(crashR) == True:
+				continue
 
 			accumSdc += sdcR * count
 			accumBenign += maskingR * count
