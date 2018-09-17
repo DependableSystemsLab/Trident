@@ -1,5 +1,5 @@
 import sys, os, math
-from config import bmName,fiFilePrefix,irPath,inputList
+from config import bmName,fiFilePrefix,irPath,inputList,input_txt
 
 minFileNo = 0
 maxFileNo = len(inputList) - 1
@@ -11,9 +11,10 @@ for inI in inputList:
     os.system("cp " + fiFilePrefix + `inC` + "-fi.txt fi_breakdown.txt")
     os.system("python prepare.py " + bmName + " \"" + inI + "\"")
     os.system("mv prediction.results results/prediction.results-" + `inC` )
-    os.system("rm -rf file_" + `inC`)
-    os.system("mkdir file_" + `inC`)
-    os.system("mv *.txt file_" + `inC`)
+    if input_txt == 0:
+        os.system("rm -rf file_" + `inC`)
+        os.system("mkdir file_" + `inC`)
+        os.system("mv *.txt file_" + `inC`)
     inC += 1
 
 # Store the variation results in results/prediction.results

@@ -8,6 +8,8 @@ ROOT = ""
 bmName = "pathfinder"
 inputList = ["432 52", "1000 10", "200 20", "100 100", "600 50", "150 150", "232 46", "65 321", "54 43", "139 94"]
 
+# Set to 1 if program has input .txt files
+input_txt = 0
 
 # Update the paths according to your environment
 OPT= ROOT + "/llvm-2.9-build/bin/opt"  
