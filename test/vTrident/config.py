@@ -8,6 +8,8 @@ ROOT = ""
 bmName = ""
 inputList = []
 
+# Set to 1 if program has input .txt files
+input_txt = 0
 
 # Update the paths according to your environment
 OPT= ROOT + "/llvm-2.9-build/bin/opt"  

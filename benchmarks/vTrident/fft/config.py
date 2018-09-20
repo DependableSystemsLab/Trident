@@ -8,6 +8,8 @@ ROOT = ""
 bmName = "fft"
 inputList = ["in0.png output.png", "in1.png output.png", "in2.png output.png", "in3.png output.png", "in4.png output.png", "in5.png output.png", "in6.png output.png", "in7.png output.png", "in8.png output.png", "in9.png output.png"]
 
+# Set to 1 if program has input .txt files
+input_txt = 0
 
 # Update the paths according to your environment
 OPT= ROOT + "/llvm-2.9-build/bin/opt"  

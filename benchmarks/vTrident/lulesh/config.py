@@ -8,6 +8,8 @@ ROOT = ""
 bmName = "lulesh"
 inputList = ["-s 4 -p", "-s 1 -p", "-s 2 -p", "-s 3 -p", "-s 5 -p", "-s 7 -p", "-s 6 -p", "-s 8 -p", "-s 9 -p", "-s 10 -p"]
 
+# Set to 1 if program has input .txt files
+input_txt = 0
 
 # Update the paths according to your environment
 OPT= ROOT + "/llvm-2.9-build/bin/opt"  

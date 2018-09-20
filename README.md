@@ -55,7 +55,7 @@ Preparation - vTrident
 
 3. Put the compiled LLVM IR file of the program in the `./test/vTrident`. The instructions should be indexed. For example, using instrument in LLFI. The file name should have following pattern `<program_name>-llfi_index.ll` 
 
-4. Put the program input files (if any) for all inputs in `./test/vTrident`. 
+4. If there are any program input files that are used in input command, place them in `./test/vTrident` and if they have .txt extension, set the input_txt variable to 1 in `./test/vTrident/config.py` . 
 
 5. Choose the LLVM IR instructions that are considered as the program output in `./test/vTrident/getStoreMaskingRate.py` (line:297).
 
